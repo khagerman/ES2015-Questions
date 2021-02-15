@@ -1,0 +1,19 @@
+ES2015 Global Constants
+/* Write an ES2015 Version */
+Const PI = 3.14;
+Quiz
+What is the difference between var and let?
+	•	Var can be redeclared in the same scope
+	•	var is added to window on console.
+	•	Var can override names already used in window console.
+	•	Let is block-scoped, exists only in a code block while var is function scope and can be referenced before being declared 
+
+What is the difference between var and const?
+	•	Var can be redeclared in the same scope, const cannot. Const is is block-scoped, exists only in a code block while var is function scope and can be referenced before being declared 
+	•	
+What is the difference between let and const?
+	•	They both are block-scoped and cannot be redeclared but const cannot be redefined. (Ie const num = 6; num =4 will have an error message. 
+	•	const should be used for objects, arrays, and to start if you know it will not be redefined.
+	•	you can change the value
+What is hoisting?
+	•	Hoisting is where variables can be used before they are declared with var.  Var declarations are run first, almost like they are at the top. 
