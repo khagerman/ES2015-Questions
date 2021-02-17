@@ -15,7 +15,7 @@ const filterOutOdds = (...nums) => nums.filter((n) => n % 2 === 0);
 // findMin(1,4,12,-3) // -3
 // findMin(1,-1) // -1
 // findMin(3,1) // 1
-const findMin = (...nums) => nums.reduce((min, next) => Math.min(min, next));
+const findMin = (...nums) => Math.min(...nums);
 // mergeObjects
 // Write a function called mergeObjects that accepts two objects and returns a new object which contains all the keys and values of the first object and second object.
 
@@ -43,18 +43,24 @@ const doubleAndReturnArgs = (arr, ...nums) => [
 
 const removeRandom = (items) => {
   const randomIndex = Math.floor(Math.random() * items.length);
-  return [...items.slice(randomIndex, 1)];
+  return [...items.slice(0, randomIndex), ...items.slice(randomIndex + 1)];
 };
 const animals = ["ant", "bison", "camel", "duck", "elephant"];
 removeRandom(animals);
 // /** Return a new array with every item in array1 and array2. */
 
-const extend = (array1, array2) => [...array1, ...array2];
+const extend = (array1, array2) => {
+  return [...array1, ...array2];
+};
 
 // /** Return a new object with all the keys and values
 // from obj and a new key/value pair */
 
-const addKeyVal = (obj, key, val) => ({ ...obj, key: val });
+const addKeyVal = (obj, key, val) => {
+  const newObj = { ...obj };
+  newObj[key] = val;
+  return newObj;
+};
 
 // /** Return a new object with a key removed. */
 
@@ -68,4 +74,11 @@ const removeKey = (obj, key) => {
 const combine = (obj1, obj2) => ({ ...obj1, ...obj2 });
 // /** Return a new object with a modified key and value. */
 
-const update = (obj, key, val) => ({ ...obj, key: val });
+const update = (obj, key, val) => {
+  let newObj = { ...obj };
+  newObj[key] = val;
+  return newObj;
+};
+
+const testObj = { a: 1, b: 2, c: 3, d: 4 };
+const otherTest = { f: 3, k: 788784 };
